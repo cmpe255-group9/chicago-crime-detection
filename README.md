@@ -36,9 +36,16 @@ Predicting arrest outcomes and identifying crime hotspots in Chicago using machi
 .
 ├── README.md
 ├── notebooks/
-│   └── check_in_1_chicago_crime_eda.ipynb     # Initial EDA — Check-in 1
+│   ├── check_in_1_chicago_crime_eda.ipynb                       # Initial EDA — Check-in 1
+│   ├── check_in_2_chicago_crime_eda_year_balanced_sample.ipynb  # Year-balanced EDA — Check-in 2
+│   ├── check_in_2_full_dataset_exploration.ipynb                # Full 8.5M-row EDA — Check-in 2
+│   ├── check_in_2_with_interactive_crime_map.ipynb              # Interactive map — Check-in 2
+│   ├── check_in_2_model_exploration.ipynb                       # LR / DT / RF baselines — Check-in 2
+│   └── check_in_3_smote_xgboost.ipynb                           # SMOTE + XGBoost — Check-in 3
 └── figures/
-    └── check_in_1/                            # Plots generated during Check-in 1 EDA
+    ├── check_in_1/                                              # Check-in 1 EDA plots
+    ├── check_in_2/                                              # Check-in 2 EDA + baseline model plots
+    └── check_in_3/                                              # Check-in 3 SMOTE + XGBoost plots
 ```
 
 ## Getting Started
@@ -46,10 +53,12 @@ Predicting arrest outcomes and identifying crime hotspots in Chicago using machi
 ### Requirements
 
 - Python 3.10+
-- `pandas`, `matplotlib`, `seaborn`, `requests`
+- `pandas`, `matplotlib`, `seaborn`, `requests`, `scikit-learn`
+- `xgboost`, `imbalanced-learn` (Check-in 3 SMOTE + XGBoost notebook)
+- Mac users running XGBoost locally: `brew install libomp`
 
 ```bash
-pip install pandas matplotlib seaborn requests
+pip install pandas matplotlib seaborn requests scikit-learn xgboost imbalanced-learn
 ```
 
 ### Run the EDA Notebook
@@ -65,6 +74,8 @@ The notebook pulls a 50,000-row sample from the SODA API and uses server-side ag
 - [x] Project proposal submitted
 - [x] Dataset identified and explored (Check-in 1)
 - [x] GitHub repository created
-- [ ] Feature engineering and preprocessing
-- [ ] Model training and evaluation
+- [x] Feature engineering and preprocessing (Check-in 2)
+- [x] Baseline models: Logistic Regression, Decision Tree, Random Forest (Check-in 2)
+- [x] SMOTE + XGBoost extension (Check-in 3)
+- [ ] DBSCAN hotspot clustering
 - [ ] Final report
